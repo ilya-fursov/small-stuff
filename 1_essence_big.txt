@@ -1,0 +1,49 @@
+-- comment 1
+-- #MASTER alpha
+INPUTGRIDBIN  MODEL1.EGRID
+----------------
+INPUT*    ACTNUM    INT    grid\actnum.grdecl
+OUTPUT    ACTNUM    INT    grid\actnum_out.grdecl
+----------------
+INPUT*    FIPNUM    INT    grid\fipnum.grdecl
+OUTPUT    FIPNUM    INT    grid\fipnum_out.grdecl
+-- #ENDMASTER #ENDHEADER
+
+-- comment 2 
+-- comment 3
+
+RESTORE
+12	12	12	90	7	100	5		-- My Comment!
+12	12	80	12	5	45	4		-- comm 2
+95	95	1	1	10	11	3		-- comm 3
+1	30	5	50	7	100	2		-- comm 4
+10	10	20	30	7	90	1		-- small!
+50	50	100	50	20	20	11		-- comm A
+50	50	51	1	20	20	12		-- comm B
+ENDRESTORE
+
+BULLeye
+PERMX 	10	10	10	20	   1.5    0    150    100    50    300    MERGE    ANGLE=-31.25	
+PERMX 	60	10	10	20	   2.5    10    250    150    100    50    MAX 
+PERMX 	10	60	10	20	   3.5    10    250    150    100    50    MIN
+PERMX 	60	60	10	20	   4.5    10    250    150    100    50    MERGE
+ENDbullEYE
+
+--#MASTER
+COPY PERMX PERMZ
+-- comment 4
+-- comment 5 
+-- comment 6
+--#endMaster
+
+REDUCE
+PERMX 	20	20	70	80	   5    1    0.5    200    350    100    400    0.01    ANGLE=-35
+PERMX 	70	20	70	80	   5    2    0.5    200    350    100    400    0.01    ANGLE=-35
+PERMX 	20	70	70	80	   5    3    0.5    200    350    100    400    0.01    ANGLE=-35
+PERMX 	70	70	70	80	   5    4    0.5    200    350    100    400    0.01    ANGLE=-35
+PERMX 	33	44	50	50	   1    1    0.1    200    350    100    400    0.01    ANGLE=-30
+ENDREDUCE 
+
+-- #MASTER #STARTFOOTER
+COPY PERMX PERMZ
+MIN PERMX 0.1

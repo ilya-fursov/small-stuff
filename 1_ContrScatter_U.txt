@@ -1,0 +1,9 @@
+   
+
+  Scatter  
+			
+	essence_big.txt	
+	essence_seg1.txt	1	SEG1 20	0	1	80	50	100
+	essence_seg2.txt	2	SEG2 0	50	2	50	50	100
+	essence_seg3.txt	3	seg3 50	50	3	50	50	100
+	essence_seg4.txt	10	Seg4 0	0	4	80	50	100

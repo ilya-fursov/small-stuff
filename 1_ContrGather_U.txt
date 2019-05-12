@@ -1,0 +1,10 @@
+   
+
+  Gather  
+			
+	essence_seg1.txt	20	0	1
+	essence_seg2.txt	0	50	2
+	essence_seg3.txt	50	50	3
+	essence_seg4.txt	0	0	4
+	
+	essence_big_v2.txt	 MODEL1
